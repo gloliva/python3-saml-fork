@@ -98,6 +98,9 @@ class OneLogin_Saml2_Auth(object):
         self.__errors = []
         self.__error_reason = None
 
+        print('**** REQUEST DATA ****')
+        print(self.__request_data)
+
         if 'post_data' in self.__request_data and 'SAMLResponse' in self.__request_data['post_data']:
             # AuthnResponse -- HTTP_POST Binding
             response = OneLogin_Saml2_Response(self.__settings, self.__request_data['post_data']['SAMLResponse'])
